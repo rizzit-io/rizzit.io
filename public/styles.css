@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    color: var(--dark);
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-top: .3em;
+    margin-bottom: .5em;
+}
+
+a {
+    color: var(--red);
+}
+
+p {
+    font-size: 1.5em;
+    margin-right: 4em;
+}
+
+:root {
+    --dark: #212428;
+    --light: #e2f4fd;
+    --yellow: #fcb84f;
+    --red: #EC1D3C;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.background {
+    background-color: var(--red);
+    padding: 20px 20px;
+    border-radius: 0 0 45px 45px;
+    height: 100%;
+    min-height: 800px;
+}
+
+.background.chipped {
+    position: absolute;
+    background-color: var(--light);
+    border-bottom-right-radius: 500px;
+    width: 100%;
+    top: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 75px 75px;
+    grid-row: auto;
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+}
+
+.grid .module {
+    transition-property: border-color, border-radius;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    width: 75px;
+    border: 12px solid var(--dark);
+    overflow: hidden;
+    overflow: clip;
+    overflow-clip-margin: 1px;
+    position: relative;
+}
+
+.grid .module[data-highlight=true] {
+    border-color: var(--yellow);
+}
+
+.grid .module[data-shape='circle'] {
+    border-radius: 75px;
+}
+
+.grid .module[data-shape='pie-top-left'] {
+    border-radius: 75px 0 0 0;
+}
+
+.grid .module[data-shape='pie-bottom-left'] {
+    border-radius: 0 0 75px 0;
+}
+
+.grid .module[data-shape='pie-top-right'] {
+    border-radius: 0 75px 0 0;
+}
+
+.grid .module[data-shape='pie-bottom-right'] {
+    border-radius: 0 0 0 75px;
+}
+
+.grid .module[data-shape='square'] {
+    border-radius: 0;
+}
+
+.grid .fill {
+    transition-property: transform, background-color;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    border-radius: 9999px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--dark);
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+}
+
+.grid .module[data-fill=true] .fill {
+    transform: translate(-50%, -50%) scale(2);
+}
+
+.grid .module[data-highlight=true] .fill {
+    background-color: var(--yellow);
+}
+
+.circles {
+    position: absolute;
+    bottom: -87px;
+    left: -87px;
+}
+
+.circles * {
+    border-color: var(--red) !important;
+}
+
+.circles .module .fill {
+    background-color: var(--red);
+}
+
+.circle {
+    border-radius: 9999px;
+    background-color: var(--red);
+    position: absolute;
+}
+
+.circle.small {
+    height: 26px;
+    width: 26px;
+    bottom: 0;
+    left: -13px;
+}
+
+.circle.medium {
+    width: 52px;
+    height: 52px;
+    bottom: 40px;
+    left: -26px;
+}
+
+.circle.large {
+    height: 104px;
+    width: 104px;
+    left: -52px;
+    bottom: 109px;
+}
+
+.modules {
+    position: absolute;
+    right: -87px;
+    top: 150px;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    padding: 30px;
+}
+
+.inner {
+    position: relative;
+    margin: 150px 0;
+    height: 100%;
+}
+
+main {
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 500px) {
+    .background {
+        height: 100vh;
+    }
+
+    .wrapper {
+        max-width: 500px;
+    }
+
+    .inner {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-height: 1050px) {
+    .wrapper {
+        justify-content: start;
+    }
+
+    .inner {
+        margin: 0;
+    }
+}

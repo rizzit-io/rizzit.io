@@ -1,0 +1,11 @@
+{
+  "name": "rizzit",
+  "short_name": "rizzit",
+  "icons": [{
+    "src": "google-touch-icon.png",
+    "sizes": "512x512"
+  }],
+  "background_color": "#e2f4fd",
+  "theme_color": "#e2f4fd",
+  "display": "fullscreen"
+}

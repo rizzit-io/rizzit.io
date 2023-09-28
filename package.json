@@ -1,0 +1,11 @@
+{
+  "name": "rizzit.io",
+  "packageManager": "yarn@3.6.3",
+  "scripts": {
+    "build": "node scripts/buildScript.mjs",
+    "start": "node scripts/serveAndWatchScript.mjs"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.3"
+  }
+}
