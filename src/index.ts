@@ -1,7 +1,5 @@
 import WeightedRandom from './features/random/WeightedRandom'
 
-new EventSource('/esbuild').addEventListener('change', () => location.reload())
-
 const logoModules = document.querySelectorAll('.logo > .module')
 
 const modules = document.querySelectorAll('.modules .module')
