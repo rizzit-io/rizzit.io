@@ -10,8 +10,37 @@ h1 {
     margin-bottom: .5em;
 }
 
-a {
-    color: var(--red);
+.link-button {
+    font-size: 1.25em;
+    display: block;
+    width: fit-content;
+    padding-bottom: 3px;
+    border-bottom: 2px solid;
+    text-decoration: none;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.link-button > span {
+    z-index: 1;
+    position: relative;
+}
+
+.link-button::before {
+    content: '';
+    height: 100%;
+    width: 0;
+    background-color: var(--yellow);
+    display: block;
+    position: absolute;
+    z-index: 0;
+    transition-property: width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.link-button:hover::before  {
+    width: 100%;
 }
 
 p {
@@ -206,6 +235,10 @@ main {
 
     .inner {
         margin: 0;
+    }
+
+    .wrapper {
+        justify-content: start;
     }
 }
 
