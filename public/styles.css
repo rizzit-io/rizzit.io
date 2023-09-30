@@ -250,6 +250,8 @@ main {
 
     .inner {
         margin: 0;
+        overflow: hidden;
+        max-height: unset;
     }
 
     .wrapper {
