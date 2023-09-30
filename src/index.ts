@@ -1,5 +1,17 @@
 import WeightedRandom from './features/random/WeightedRandom'
 
+import { detect } from 'detect-browser'
+
+const browser = detect()
+
+const body = document.querySelector('body')
+
+if (browser.name == 'ios' || browser.name == 'ios-webview' || browser.name == 'edge-ios' || browser.name == 'safari') {
+  body.classList.add('webkit')
+}
+setTimeout(() => body.classList.remove('prevent-animation'), 1)
+
+
 const logoModules = document.querySelectorAll('.logo > .module')
 
 const modules = document.querySelectorAll('.modules .module')
