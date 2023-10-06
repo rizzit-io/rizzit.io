@@ -1,6 +1,10 @@
 import WeightedRandom from './features/random/WeightedRandom'
-
 import { detect } from 'detect-browser'
+import LocalizationDomModule from './features/localization/LocalizationDomModule'
+
+const localizationDomModule = new LocalizationDomModule()
+
+localizationDomModule.run()
 
 const browser = detect()
 
