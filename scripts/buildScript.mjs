@@ -1,3 +1,8 @@
-import build from './build.mjs'
+import * as esbuild from 'esbuild'
+import publicBuildOptions from './publicBuildOptions.mjs'
+import srcBuildOptions from './srcBuildOptions.js'
 
-await build()
+await esbuild.build(publicBuildOptions)
+
+await esbuild.build(srcBuildOptions)
+
